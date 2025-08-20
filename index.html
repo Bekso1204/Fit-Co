@@ -19,22 +19,33 @@
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      background-color: #f9fdf970;
+      background-color: #ededed;
       color: #333;
+      margin: 0;
+      padding: 0;
+      width: 100%;
     }
 
     header {
-      background: #ffffffcc;
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid #e0e0e0;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+  background: #ffffffcc;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 2rem;
+}
+
+.announcement {
+  font-weight: bold;
+  color: #2e7d32;
+  font-size: 1rem;
+}
+
 
     header img {
       height: 50px; /* Logo */
@@ -59,13 +70,15 @@
 
     /* Section Hero avec image */
     .hero {
-      background: url("https://images.unsplash.com/photo-1554284126-aa88f22d8b74?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80") center/cover no-repeat;
+      background: url("header.jpg") center/cover no-repeat;
       height: 90vh;
+      width: 100vw;
+      max-width: 100vw; 
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: white;
+      color: #45a71f;
       text-shadow: 0 2px 6px rgba(0,0,0,0.5);
       text-align: center;
       padding: 0 1rem;
@@ -79,6 +92,10 @@
     .hero p {
       font-size: 1.3rem;
       margin-bottom: 2rem;
+      background: #45a71f;
+      color: white;
+      padding: 1rem;
+      border-radius: 30px;
     }
 
     .btn {
@@ -124,7 +141,7 @@
 
     .card h3 {
       margin-bottom: 1rem;
-      color: #1b5e20;
+      color: #45a71f;
     }
 
     .card p {
@@ -137,6 +154,58 @@
       margin-top: 1rem;
       color: #2e7d32;
     }
+
+    .smoothie-card {
+  position: relative;
+  background: url("smoothie.jpg") center/cover no-repeat;
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+
+.smoothie-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4); /* overlay semi-transparent */
+  border-radius: 12px;
+  z-index: 0;
+}
+
+.smoothie-card * {
+  position: relative;
+  z-index: 1; /* texte au-dessus de l'overlay */
+}
+
+    .snacks-card {
+  position: relative;
+  background: url("snacks.jpg") center/cover no-repeat;
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+
+.snacks-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4); /* overlay semi-transparent */
+  border-radius: 12px;
+  z-index: 0;
+}
+
+.snacks-card * {
+  position: relative;
+  z-index: 1; /* texte au-dessus de l'overlay */
+}
 
     /* Formulaire de contact */
     form {
@@ -178,26 +247,91 @@
       background: #1b5e20;
     }
 
-    /* Footer avec image */
-    footer {
-      background: url("https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80") center/cover no-repeat;
-      background-blend-mode: overlay;
-      background-color: rgba(46, 125, 50, 0.7);
+footer {
+        background: url("https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80") center/cover no-repeat;
       color: white;
       text-align: center;
       padding: 4rem 2rem;
       margin-top: 3rem;
-    }
+}
 
-    footer p {
-      margin: 0.5rem 0;
-    }
+.footercontent {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.footer-section h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-social {
+    display: flex;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 50%;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-social a:hover {
+    background-color: #fff;
+    color: #333;
+}
   </style>
 </head>
 <body>
 
   <header>
     <img src="image0.png" alt="Logo Fit & Co">
+          <div class="announcement">✨ Ouverture prochaine ✨</div>
     <nav>
       <ul>
         <li><a href="#abonnements">Abonnements</a></li>
@@ -242,11 +376,12 @@
   <section id="bar">
     <h2>Bar Healthy</h2>
     <div class="cards">
-      <div class="card">
+      <div class="card smoothie-card">
         <h3>Smoothies</h3>
-        <p>Un large choix de smoothies énergétiques et vitaminés pour accompagner vos séances.</p>
+        <p>Savourez nos smoothies énergétiques et vitaminés, faits sur place à partir de produits frais, 
+          pour booster vos séances et votre énergie.</p>
       </div>
-      <div class="card">
+      <div class="card snacks-card">
         <h3>Snacks fitness</h3>
         <p>Des encas sains et protéinés pour booster votre récupération après l’effort.</p>
       </div>
@@ -269,11 +404,32 @@
     </form>
   </section>
 
-  <footer>
+      <footer>
+        <div class="footercontent">
+            <div class="footer-section about">
+                <h2>Fit & Co</h2>
+                <p>Fit & Co, votre salle de sport où liberté, énergie et bien-être se rencontrent. 
+                  Des abonnements flexibles, des séances à l’unité et un bar healthy pour booster votre vitalité.</p></br>
+            </div>
+            <div class="footer-section">
+                <h2>Infos</h2>
+                <ul>
+                    <li><a href="mailto:contact@fitandco.fr"><i class="ri-mail-line"></i> contact@fitandco.fr</a></li>
+                    <li>Ouvert 7j/7 de 6h à 23h</li>
+                    <li>39100 Dole</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
     <p>&copy; 2025 Fit & Co - Tous droits réservés</p>
-    <p>Ouvert 7j/7 de 6h à 23h</p>
-    <p>Contact : contact@fitandco.fr</p>
-  </footer>
+            <div class="footer-social">
+                <a href="#" style="display: none;"><i class="ri-instagram-line"></i></a>
+                <a href="#" style="display: none;"><i class="ri-threads-fill"></i></a>
+                <a href="#" style="display: none;"><i class="ri-github-fill"></i></a>
+                <a href="#" style="display: none;"><i class="ri-linkedin-fill"></i></a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
