@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fit & Co - Liberté, sport, énergie</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background-color: #f9fdf9;
+      color: #333;
+    }
+
+    header {
+      background: #ffffffcc;
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid #e0e0e0;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header img {
+      height: 50px; /* Logo */
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2e7d32;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #1b5e20;
+    }
+
+    /* Section Hero avec image */
+    .hero {
+      background: url("https://images.unsplash.com/photo-1554284126-aa88f22d8b74?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80") center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      background: #2e7d32;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #1b5e20;
+    }
+
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      color: #1b5e20;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+    }
+
+    .price {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      color: #2e7d32;
+    }
+
+    /* Formulaire de contact */
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #1b5e20;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    form button {
+      background: #2e7d32;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: #1b5e20;
+    }
+
+    /* Footer avec image */
+    footer {
+      background: url("https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80") center/cover no-repeat;
+      background-blend-mode: overlay;
+      background-color: rgba(46, 125, 50, 0.7);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+      margin-top: 3rem;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Logo Fit & Co">
+    <nav>
+      <ul>
+        <li><a href="#abonnements">Abonnements</a></li>
+        <li><a href="#bar">Bar Healthy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Fit & Co</h1>
+    <p>Liberté, sport, énergie</p>
+    <a href="#abonnements" class="btn">Découvrir nos offres</a>
+  </section>
+
+  <section id="abonnements">
+    <h2>Nos abonnements</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Sans engagement</h3>
+        <p>Accès complet à la salle sans contrainte de durée.</p>
+        <p class="price">24,90€ / mois</p>
+      </div>
+      <div class="card">
+        <h3>Avec engagement</h3>
+        <p>Un abonnement à prix réduit pour rester motivé sur la durée.</p>
+        <p class="price">19,90€ / mois</p>
+      </div>
+      <div class="card">
+        <h3>Séance à l’unité</h3>
+        <p>Payez uniquement quand vous venez vous entraîner.</p>
+        <p class="price">4€ / séance</p>
+      </div>
+      <div class="card">
+        <h3>Multipass 10 séances</h3>
+        <p>Un pack économique pour les sportifs réguliers.</p>
+        <p class="price">35€ (3,50€ / séance)</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="bar">
+    <h2>Bar Healthy</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Smoothies</h3>
+        <p>Un large choix de smoothies énergétiques et vitaminés pour accompagner vos séances.</p>
+      </div>
+      <div class="card">
+        <h3>Snacks fitness</h3>
+        <p>Des encas sains et protéinés pour booster votre récupération après l’effort.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contactez-nous</h2>
+    <form action="traitement.php" method="post">
+      <label for="name">Nom</label>
+      <input type="text" id="name" name="name" placeholder="Votre nom" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Votre email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Fit & Co - Tous droits réservés</p>
+    <p>Ouvert 7j/7 de 6h à 23h</p>
+    <p>Contact : contact@fitandco.fr</p>
+  </footer>
+
+</body>
+</html>
