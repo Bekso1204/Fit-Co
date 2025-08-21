@@ -327,21 +327,69 @@ footer {
     background-color: #fff;
     color: #333;
 }
+/* Hamburger button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #2e7d32;
+  border-radius: 2px;
+}
+
+/* Menu caché sur mobile */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="image0.png" alt="Logo Fit & Co">
-          <div class="announcement">✨ Ouverture prochaine ✨</div>
-    <nav>
-      <ul>
-        <li><a href="#abonnements">Abonnements</a></li>
-        <li><a href="#bar">Bar Healthy</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <img src="image0.png" alt="Logo Fit & Co">
+  <div class="announcement">✨ Ouverture prochaine ✨</div>
+
+  <!-- Bouton hamburger -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav>
+    <ul id="menu">
+      <li><a href="#abonnements">Abonnements</a></li>
+      <li><a href="#bar">Bar Healthy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
   <section class="hero">
     <h1>Fit & Co</h1>
@@ -433,5 +481,10 @@ footer {
         </div>
     </footer>
 
-</body>
-</html>
+    <script>
+      function toggleMenu() {
+        document.getElementById("menu").classList.toggle("active");
+      }
+    </script>
+  </body>
+  </html>
